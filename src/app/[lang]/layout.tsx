@@ -18,7 +18,18 @@ export async function generateMetadata({
   const { lang } = await params;
   const locale = isLocale(lang) ? lang : profile.defaultLocale;
 
+  // Absolute URLs (for Open Graph images) need a base. Prefer an explicit
+  // site URL, then Vercel's provided domain, so shared links resolve correctly.
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3000");
+
   return {
+    metadataBase: new URL(siteUrl),
     title: {
       default: resolveText(profile.meta.title, locale),
       template: "%s · Matrimonial Profile",
@@ -33,6 +44,11 @@ export async function generateMetadata({
       description: resolveText(profile.meta.description, locale),
       locale: locale === "hi" ? "hi_IN" : "en_IN",
       type: "profile",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: resolveText(profile.meta.title, locale),
+      description: resolveText(profile.meta.description, locale),
     },
     // This profile is shared by link, never meant to appear in search results.
     robots: {
