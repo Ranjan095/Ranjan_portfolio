@@ -77,9 +77,9 @@ export function DetailCard({
           {items.map((item) => (
             <div
               key={item.label}
-              className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+              className="flex items-baseline justify-between gap-x-4"
             >
-              <dt className="text-xs font-semibold tracking-[0.14em] text-gold-deep uppercase">
+              <dt className="shrink-0 text-xs font-semibold tracking-[0.14em] text-gold-deep uppercase">
                 {item.label}
               </dt>
               <dd
