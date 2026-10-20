@@ -75,6 +75,14 @@ export const uiCopy = {
     en: "Image",
     hi: "तस्वीर",
   },
+  imageLoading: {
+    en: "Loading image…",
+    hi: "तस्वीर लोड हो रही है…",
+  },
+  downloadImage: {
+    en: "Download image",
+    hi: "तस्वीर डाउनलोड करें",
+  },
 } as const satisfies Record<string, LocalizedText>;
 
 export type UiCopyKey = keyof typeof uiCopy;
