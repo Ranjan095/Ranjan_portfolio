@@ -280,10 +280,10 @@ export const profile: Profile = {
     // used as the hero portrait. Keep dimensions in sync with each image.
     {
       // `photos[0]` is the portrait shown at the top of the page.
-      src: "/images/portrait.jpg",
+      src: "/images/portrait.png",
       alt: {
-        en: "Recent portrait",
-        hi: "हालिया चित्र",
+        en: "Portrait of Ranjan Yadav",
+        hi: "रंजन यादव का तस्वीर",
       },
       caption: { en: "Recent portrait", hi: "हालिया चित्र" },
       width: 1200,
@@ -292,8 +292,61 @@ export const profile: Profile = {
     {
       src: "/images/gallery-01.jpg",
       alt: {
-        en: "Gallery photograph — add a description",
-        hi: "गैलरी तस्वीर — विवरण जोड़ें",
+        en: "Recent photograph of Ranjan Yadav",
+        hi: "रंजन यादव की हालिया तस्वीर",
+      },
+      caption: {
+        en: "A recent photograph",
+        hi: "हालिया तस्वीर",
+      },
+      width: 1200,
+      height: 1500,
+    },
+
+    {
+      src: "/images/gallery-02.jpg",
+      alt: {
+        en: "Photograph from the gallery",
+        hi: "गैलरी की तस्वीर",
+      },
+      caption: {
+        en: "A recent photograph",
+        hi: "हालिया तस्वीर",
+      },
+      width: 3464,
+      height: 4618,
+    },
+    {
+      src: "/images/gallery-03.jpg",
+      alt: {
+        en: "Photograph from the gallery",
+        hi: "गैलरी की तस्वीर",
+      },
+      caption: {
+        en: "A recent photograph",
+        hi: "हालिया तस्वीर",
+      },
+      width: 1200,
+      height: 2000,
+    },
+    {
+      src: "/images/gallery-04.jpg",
+      alt: {
+        en: "Photograph from the gallery",
+        hi: "गैलरी की तस्वीर",
+      },
+      caption: {
+        en: "A recent photograph",
+        hi: "हालिया तस्वीर",
+      },
+      width: 3072,
+      height: 4096,
+    },
+    {
+      src: "/images/gallery-05.png",
+      alt: {
+        en: "Photograph from the gallery",
+        hi: "गैलरी की तस्वीर",
       },
       caption: {
         en: "A recent photograph",
@@ -303,46 +356,14 @@ export const profile: Profile = {
       height: 1500,
     },
     {
-      src: "/images/gallery-02.png",
-      alt: {
-        en: "Decorative placeholder panel — personal photograph not added yet",
-        hi: "डिज़ाइन का नमूना — अभी व्यक्तिगत तस्वीर नहीं जोड़ी गई है",
-      },
-      width: 1200,
-      height: 1500,
-    },
-    {
-      src: "/images/gallery-03.png",
-      alt: {
-        en: "Decorative placeholder panel — personal photograph not added yet",
-        hi: "डिज़ाइन का नमूना — अभी व्यक्तिगत तस्वीर नहीं जोड़ी गई है",
-      },
-      width: 1200,
-      height: 1200,
-    },
-    {
-      src: "/images/gallery-04.png",
-      alt: {
-        en: "Decorative placeholder panel — personal photograph not added yet",
-        hi: "डिज़ाइन का नमूना — अभी व्यक्तिगत तस्वीर नहीं जोड़ी गई है",
-      },
-      width: 1200,
-      height: 900,
-    },
-    {
-      src: "/images/gallery-05.png",
-      alt: {
-        en: "Decorative placeholder panel — personal photograph not added yet",
-        hi: "डिज़ाइन का नमूना — अभी व्यक्तिगत तस्वीर नहीं जोड़ी गई है",
-      },
-      width: 1200,
-      height: 1500,
-    },
-    {
       src: "/images/gallery-06.png",
       alt: {
-        en: "Decorative placeholder panel — personal photograph not added yet",
-        hi: "डिज़ाइन का नमूना — अभी व्यक्तिगत तस्वीर नहीं जोड़ी गई है",
+        en: "Photograph from the gallery",
+        hi: "गैलरी की तस्वीर",
+      },
+      caption: {
+        en: "A recent photograph",
+        hi: "हालिया तस्वीर",
       },
       width: 1200,
       height: 900,
