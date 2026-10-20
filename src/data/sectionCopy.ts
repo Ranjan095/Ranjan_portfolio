@@ -66,6 +66,7 @@ export const sectionCopy = {
       hi: "परिवार से संपर्क",
     },
     responseTitle: { en: "Next Steps", hi: "आगे की प्रक्रिया" },
+    familyPhonesLabel: { en: "Mobile", hi: "मोबाइल" },
     callLabel: { en: "Call", hi: "कॉल करें" },
     whatsappFallback: { en: "Message on WhatsApp", hi: "व्हाट्सऐप पर संदेश भेजें" },
     emailFallback: { en: "Send an Email", hi: "ईमेल भेजें" },

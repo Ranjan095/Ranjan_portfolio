@@ -1,13 +1,13 @@
 "use client";
 
 import { Download, Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { Container } from "@/components/ui/Container";
 import type { NavItem } from "@/data/navigation";
 import { uiCopy } from "@/data/uiCopy";
+import { biodataPdfDownloadName, biodataPdfHref } from "@/lib/biodataPdf";
 import { resolveText } from "@/lib/i18n";
 import type { Locale } from "@/types/profile";
 
@@ -83,15 +83,16 @@ export function MobileNav({ items, locale, onNavigate }: MobileNavProps) {
               </ul>
             </nav>
             <div className="border-t border-gold/20 py-4">
-              <Link
-                href={`/${locale}/biodata`}
+              <a
+                href={biodataPdfHref(locale)}
+                download={biodataPdfDownloadName(locale)}
                 onClick={() => setIsOpen(false)}
                 title={resolveText(uiCopy.downloadBiodata, locale)}
                 aria-label={resolveText(uiCopy.downloadBiodata, locale)}
                 className="mx-auto flex size-11 items-center justify-center rounded-pill border border-gold text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface"
               >
                 <Download className="size-5 shrink-0" strokeWidth={2.5} aria-hidden="true" />
-              </Link>
+              </a>
             </div>
             <div className="flex justify-center border-t border-gold/20 py-4">
               <LanguageSwitcher locale={locale} />

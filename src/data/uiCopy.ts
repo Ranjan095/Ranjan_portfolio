@@ -91,6 +91,10 @@ export const uiCopy = {
     en: "Save as PDF",
     hi: "PDF के रूप में सहेजें",
   },
+  downloadBiodataPdf: {
+    en: "Download PDF",
+    hi: "PDF डाउनलोड करें",
+  },
   biodataTitle: {
     en: "Marriage Biodata",
     hi: "विवाह बायोडाटा",
@@ -122,6 +126,10 @@ export const uiCopy = {
   biodataEducation: {
     en: "Education",
     hi: "शिक्षा",
+  },
+  biodataInterests: {
+    en: "Interests & Hobbies",
+    hi: "रुचियाँ और शौक",
   },
   biodataCareer: {
     en: "Career",

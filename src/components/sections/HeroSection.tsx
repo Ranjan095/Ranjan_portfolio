@@ -1,6 +1,5 @@
 import { ArrowDown, Download, Images } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
 import { DecorativeDivider } from "@/components/ui/DecorativeDivider";
@@ -8,6 +7,7 @@ import { OutlineButton } from "@/components/ui/OutlineButton";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { profile } from "@/data/profile";
 import { uiCopy } from "@/data/uiCopy";
+import { biodataPdfDownloadName, biodataPdfHref } from "@/lib/biodataPdf";
 import { resolveText } from "@/lib/i18n";
 import type { Locale } from "@/types/profile";
 
@@ -73,7 +73,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
             ) : null}
 
             <div
-              className="mt-9 flex animate-fade-up flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center xl:justify-start"
+              className="mt-9 flex animate-fade-up flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center xl:justify-start"
               style={{ animationDelay: "320ms" }}
             >
               <PrimaryButton href={profile.hero.primaryActionHref} size="lg">
@@ -87,14 +87,16 @@ export function HeroSection({ locale }: { locale: Locale }) {
                 <Images className="size-4" strokeWidth={1.75} />
                 {resolveText(profile.hero.secondaryAction, locale)}
               </OutlineButton>
-              <Link
-                href={`/${locale}/biodata`}
+              <a
+                href={biodataPdfHref(locale)}
+                download={biodataPdfDownloadName(locale)}
                 title={resolveText(uiCopy.downloadBiodata, locale)}
                 aria-label={resolveText(uiCopy.downloadBiodata, locale)}
-                className="inline-flex items-center justify-center rounded-pill border border-gold self-stretch px-4 text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-pill border border-gold px-8 py-3.5 text-base font-semibold tracking-wide text-burgundy transition-colors duration-200 hover:border-burgundy hover:bg-burgundy hover:text-surface"
               >
-                <Download className="size-5 shrink-0" strokeWidth={2.5} aria-hidden="true" />
-              </Link>
+                <Download className="size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
+                {resolveText(uiCopy.downloadBiodata, locale)}
+              </a>
             </div>
           </div>
 

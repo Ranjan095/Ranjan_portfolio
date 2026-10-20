@@ -1,5 +1,4 @@
 import { Download } from "lucide-react";
-import Link from "next/link";
 
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -8,6 +7,7 @@ import { DecorativeDivider } from "@/components/ui/DecorativeDivider";
 import { availableNavigation } from "@/data/navigation";
 import { profile } from "@/data/profile";
 import { uiCopy } from "@/data/uiCopy";
+import { biodataPdfDownloadName, biodataPdfHref } from "@/lib/biodataPdf";
 import { resolveText } from "@/lib/i18n";
 import type { Locale } from "@/types/profile";
 
@@ -56,14 +56,15 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href={`/${locale}/biodata`}
+          <a
+            href={biodataPdfHref(locale)}
+            download={biodataPdfDownloadName(locale)}
             title={resolveText(uiCopy.downloadBiodata, locale)}
             aria-label={resolveText(uiCopy.downloadBiodata, locale)}
             className="hidden size-10 items-center justify-center rounded-pill border border-gold bg-transparent text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface sm:inline-flex"
           >
             <Download className="size-5 shrink-0" strokeWidth={2.5} aria-hidden="true" />
-          </Link>
+          </a>
           <div className="hidden md:block">
             <LanguageSwitcher locale={locale} />
           </div>

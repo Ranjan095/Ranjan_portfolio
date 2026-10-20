@@ -34,6 +34,10 @@ export function ContactSection({ locale }: { locale: Locale }) {
   );
 
   const family = contact.familyContact;
+  const familyPhones =
+    family?.showOnPage
+      ? (family.phones ?? (family.phone ? [family.phone] : []))
+      : [];
   const familyPhoneLink =
     family?.showOnPage && family.phone ? telUrl(family.phone) : null;
   const familyWhatsAppLink =
@@ -58,7 +62,10 @@ export function ContactSection({ locale }: { locale: Locale }) {
   // published, even if it has no phone number or email to link to.
   const showFamilyCard = Boolean(family?.showOnPage);
   const hasFamilyLinks = Boolean(
-    familyPhoneLink || familyWhatsAppLink || familyEmailLink,
+    familyPhones.length ||
+      familyPhoneLink ||
+      familyWhatsAppLink ||
+      familyEmailLink,
   );
   const hasActions = Boolean(
     whatsappLink || emailLink || biodata || showFamilyCard,
@@ -152,6 +159,26 @@ export function ContactSection({ locale }: { locale: Locale }) {
                     : undefined
               }
             >
+              {familyPhones.length ? (
+                <div className="mt-6 flex flex-col items-center gap-2">
+                  <span className="text-xs font-semibold tracking-[0.14em] text-gold-deep uppercase">
+                    {resolveText(copy.familyPhonesLabel, locale)}
+                  </span>
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    {familyPhones.map((phone) => (
+                      <a
+                        key={phone}
+                        href={telUrl(phone) ?? undefined}
+                        className="inline-flex items-center gap-2 rounded-pill border border-gold/50 bg-gold/10 px-4 py-1.5 font-normal text-base font-normal tabular-nums tracking-wide text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface"
+                      >
+                        <Phone className="size-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                        {phone}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
               {hasFamilyLinks ? (
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
                   {familyWhatsAppLink ? (
@@ -197,21 +224,14 @@ export function ContactSection({ locale }: { locale: Locale }) {
         </>
       ) : null}
 
-      {contact.responseWindow || contact.note ? (
+      {contact.responseWindow ? (
         <div className="mx-auto mt-12 max-w-2xl text-center">
           <h3 className="font-display text-xl text-burgundy">
             {resolveText(copy.responseTitle, locale)}
           </h3>
-          {contact.responseWindow ? (
-            <p className="mt-3 text-ink-soft">
-              {resolveText(contact.responseWindow, locale)}
-            </p>
-          ) : null}
-          {contact.note ? (
-            <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">
-              {resolveText(contact.note, locale)}
-            </p>
-          ) : null}
+          <p className="mt-3 text-ink-soft">
+            {resolveText(contact.responseWindow, locale)}
+          </p>
         </div>
       ) : null}
     </SectionWrapper>

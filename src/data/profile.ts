@@ -382,8 +382,8 @@ export const profile: Profile = {
       phones: ["8092003649", "9108909245"],
       showOnPage: true,
       note: {
-        en: "For further discussions, please connect with my family through the person who shared this profile.",
-        hi: "आगे की बातचीत के लिए कृपया यह परिचय साझा करने वाले व्यक्ति के माध्यम से मेरे परिवार से संपर्क करें।",
+        en: "For further discussions, please connect with my family or the person who shared this profile.",
+        hi: "आगे की बातचीत के लिए कृपया मेरे परिवार से या यह परिचय साझा करने वाले व्यक्ति से संपर्क करें।",
       },
     },
     note: {

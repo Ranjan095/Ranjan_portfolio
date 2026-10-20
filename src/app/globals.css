@@ -202,12 +202,23 @@
 @media print {
   @page {
     size: A4;
-    margin: 14mm;
+    margin: 0;
   }
 
   html,
   body {
     background: #ffffff;
+  }
+
+  /* One uniform page colour: drop the ivory wrapper band so no different
+     background shows around or behind the content. */
+  .biodata-document {
+    background: #ffffff !important;
+  }
+
+  .biodata-document .frame-double,
+  .biodata-sheet {
+    background: #ffffff !important;
   }
 
   /* Hide site chrome and screen-only controls on the printable sheet. */
@@ -227,6 +238,12 @@
     box-shadow: none !important;
   }
 
+  /* Full-bleed sheets: no page border, but keep a slim inner gutter so text
+     never touches the paper edge. */
+  .biodata-sheet {
+    padding: 12mm 10mm !important;
+  }
+
   /* Each sheet is exactly one printed page. */
   .biodata-sheet {
     break-after: page;
@@ -240,16 +257,25 @@
 
   /* Slightly tighter type so each sheet comfortably fits an A4 page. */
   .biodata-document {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.45;
   }
 
   .biodata-document h1 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
 
   .biodata-document h2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+  }
+
+  /* Compact the portrait and header so page 1 stays within one sheet. */
+  .biodata-document header {
+    padding-bottom: 0.75rem !important;
+  }
+
+  .biodata-document header img {
+    height: 4.5rem !important;
   }
 
   /* The accent panel's negative margins can overflow the page in print. */

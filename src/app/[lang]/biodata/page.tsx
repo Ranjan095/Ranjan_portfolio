@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,7 @@ import { PrintBiodataButton } from "@/components/biodata/PrintBiodataButton";
 import { Container } from "@/components/ui/Container";
 import { profile } from "@/data/profile";
 import { uiCopy } from "@/data/uiCopy";
+import { biodataPdfDownloadName, biodataPdfHref } from "@/lib/biodataPdf";
 import { formatHeight } from "@/lib/format";
 import { resolveText } from "@/lib/i18n";
 import { isLocale } from "@/lib/locales";
@@ -65,7 +66,17 @@ export default async function BiodataPage({ params }: PageProps<"/[lang]/biodata
             <ArrowLeft className="size-4" strokeWidth={1.75} aria-hidden="true" />
             {resolveText(uiCopy.backToProfile, locale)}
           </Link>
-          <PrintBiodataButton locale={locale} />
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <a
+              href={biodataPdfHref(locale)}
+              download={biodataPdfDownloadName(locale)}
+              className="inline-flex items-center justify-center gap-2 rounded-pill border border-burgundy bg-burgundy px-5 py-2.5 text-sm font-semibold tracking-wide text-surface transition-colors hover:bg-burgundy-deep"
+            >
+              <Download className="size-4" strokeWidth={2} aria-hidden="true" />
+              {resolveText(uiCopy.downloadBiodataPdf, locale)}
+            </a>
+            <PrintBiodataButton locale={locale} />
+          </div>
         </div>
         <p className="biodata-toolbar mb-8 text-center text-sm text-muted print:hidden">
           {resolveText(uiCopy.printHint, locale)}
@@ -132,18 +143,26 @@ export default async function BiodataPage({ params }: PageProps<"/[lang]/biodata
                 ))}
               </ul>
             </BiodataSection>
-
-            {profile.personal.about ? (
-              <BiodataSection
-                title={resolveText(uiCopy.biodataAbout, locale)}
-                className="sm:col-span-2"
-              >
-                <p className="leading-relaxed text-ink-soft">
-                  {resolveText(profile.personal.about, locale)}
-                </p>
-              </BiodataSection>
-            ) : null}
           </div>
+
+          {interestItems(locale).length ? (
+            <div className="mt-8">
+              <BiodataSection
+                title={resolveText(uiCopy.biodataInterests, locale)}
+              >
+                <ul className="flex flex-wrap gap-2">
+                  {interestItems(locale).map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-pill border border-gold/50 bg-gold/10 px-3 py-1 text-sm text-ink"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </BiodataSection>
+            </div>
+          ) : null}
 
           <BiodataPageMark locale={locale} page={1} total={2} />
         </article>
@@ -151,6 +170,16 @@ export default async function BiodataPage({ params }: PageProps<"/[lang]/biodata
         {/* Page 2 */}
         <article className="biodata-sheet frame-double mt-8 rounded-card bg-surface p-6 shadow-soft sm:p-10 print:mt-0 print:rounded-none print:border-0 print:p-0 print:shadow-none">
           <BiodataContinuation locale={locale} />
+
+          {profile.personal.about ? (
+            <div className="mt-6">
+              <BiodataSection title={resolveText(uiCopy.biodataAbout, locale)}>
+                <p className="leading-relaxed text-ink-soft">
+                  {resolveText(profile.personal.about, locale)}
+                </p>
+              </BiodataSection>
+            </div>
+          ) : null}
 
           <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
             <BiodataSection title={resolveText(uiCopy.biodataFamily, locale)}>
@@ -375,6 +404,11 @@ function careerBadges(locale: Locale): string[] {
   }
 
   return badges;
+}
+
+/** Hobbies and interests, resolved for the current locale. */
+function interestItems(locale: Locale): string[] {
+  return profile.interests.items.map((item) => resolveText(item, locale));
 }
 
 function familyRows(locale: Locale): DetailRow[] {
