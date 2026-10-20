@@ -1,4 +1,3 @@
-
 import type { LocalizedText } from "@/types/profile";
 
 /** A section heading plus any extra sub-labels that section needs. */
@@ -8,8 +7,8 @@ export type SectionCopy = Record<string, LocalizedText | undefined> & {
 };
 
 /**
- * Headings and field labels for every content section. Kept beside the profile
- * data (not inside components) so all visible copy is translatable in Phase 6.
+ * Headings and field labels for every content section.
+ * All visible copy is maintained here so it can be translated consistently.
  */
 export const sectionCopy = {
   about: {
@@ -19,90 +18,96 @@ export const sectionCopy = {
       hi: "मेरे बारे में कुछ और बातें",
     },
     subtitle: {
-      en: "A glimpse into my personality, values, interests, and the everyday life I hope to share with my life partner.",
-      hi: "मेरे व्यक्तित्व, मूल्यों, रुचियों और उस रोज़मर्रा की ज़िंदगी की एक झलक जिसे मैं अपनी जीवनसाथी के साथ साझा करना चाहता हूँ।",
+      en: "Get to know my interests, outlook on life, and the values I hope to bring to a meaningful relationship.",
+      hi: "मेरी रुचियों, जीवन के प्रति सोच और उन मूल्यों को जानें जिन्हें मैं एक सार्थक रिश्ते में महत्व देता हूँ।",
     },
-    detailsTitle: { en: "At a Glance", hi: "एक नज़र में" },
-    introductionTitle: { en: "A Little Introduction", hi: "मेरा संक्षिप्त परिचय" },
+    detailsTitle: { en: "Personal Details", hi: "व्यक्तिगत जानकारी" },
+    introductionTitle: { en: "A Little Introduction", hi: "मेरा परिचय" },
     interestsTitle: { en: "Hobbies & Interests", hi: "शौक और रुचियाँ" },
-    valuesTitle: { en: "My Lifestyle & Values", hi: "मेरी जीवनशैली और मूल्य" },
+    valuesTitle: { en: "My Values", hi: "मेरे मूल्य" },
   },
+
   education: {
     eyebrow: { en: "Education", hi: "शिक्षा" },
     title: { en: "My Educational Background", hi: "मेरी शैक्षणिक पृष्ठभूमि" },
     subtitle: {
-      en: "My educational journey reflects my interest in learning, personal growth, and developing new skills.",
-      hi: "मेरी शैक्षणिक यात्रा सीखने, व्यक्तिगत विकास और नए कौशल हासिल करने में मेरी रुचि को दर्शाती है।",
+      en: "My education reflects an ongoing commitment to learning and personal development, alongside my professional journey.",
+      hi: "मेरी शिक्षा सीखने और व्यक्तिगत विकास के प्रति मेरी निरंतर प्रतिबद्धता को दर्शाती है, जिसे मैं अपने पेशेवर जीवन के साथ आगे बढ़ा रहा हूँ।",
     },
   },
+
   family: {
     eyebrow: { en: "Family", hi: "परिवार" },
-    title: { en: "My Family & Roots", hi: "मेरा परिवार और हमारी जड़ें" },
+    title: { en: "My Family & Roots", hi: "मेरा परिवार और मेरी जड़ें" },
     subtitle: {
-      en: "My family has played an important role in shaping my values, with mutual respect, understanding, and togetherness at the heart of our lives.",
-      hi: "मेरे परिवार ने मेरे मूल्यों को आकार देने में महत्वपूर्ण भूमिका निभाई है। आपसी सम्मान, समझ और एकजुटता हमारे जीवन का अहम हिस्सा हैं।",
+      en: "A little about my family background, our roots in Madhubani, Bihar, and the values I consider important in family relationships.",
+      hi: "मेरे परिवार, मधुबनी, बिहार से हमारे जुड़ाव और पारिवारिक रिश्तों में मेरे लिए महत्वपूर्ण मूल्यों की एक झलक।",
     },
     parentsTitle: { en: "My Parents", hi: "मेरे माता-पिता" },
     siblingsTitle: { en: "My Brothers & Sisters", hi: "मेरे भाई-बहन" },
-    valuesTitle: { en: "Our Family Values", hi: "हमारे पारिवारिक मूल्य" },
+    valuesTitle: { en: "Values That Matter to Us", hi: "हमारे लिए महत्वपूर्ण मूल्य" },
     hometownTitle: { en: "Family Hometown", hi: "परिवार का गृहनगर" },
     ageLabel: { en: "Age", hi: "आयु" },
     occupationLabel: { en: "Occupation", hi: "व्यवसाय" },
   },
+
   contact: {
     eyebrow: { en: "Get in Touch", hi: "संपर्क करें" },
     title: {
-      en: "Let's Take the Next Step Together",
-      hi: "आइए, आगे की बातचीत शुरू करें",
+      en: "Let's Start a Conversation",
+      hi: "आइए, बातचीत की शुरुआत करें",
     },
     message: {
-      en: "Thank you for taking the time to read my profile. If you feel our values and expectations align, please connect with my family through the person who shared this profile.",
-      hi: "मेरा परिचय पढ़ने के लिए समय निकालने के लिए धन्यवाद। यदि आपको लगता है कि हमारे मूल्य और अपेक्षाएँ एक-दूसरे से मेल खाते हैं, तो कृपया यह परिचय साझा करने वाले व्यक्ति के माध्यम से मेरे परिवार से संपर्क करें।",
+      en: "Thank you for taking the time to read my profile. If you would like to take things forward, please contact my family through the person who shared this profile.",
+      hi: "मेरा परिचय पढ़ने के लिए समय निकालने के लिए धन्यवाद। यदि आप आगे बातचीत करना चाहें, तो कृपया यह परिचय साझा करने वाले व्यक्ति के माध्यम से मेरे परिवार से संपर्क करें।",
     },
     familyTitle: {
-      en: "Connecting with My Family",
-      hi: "मेरे परिवार से संपर्क",
+      en: "Family Contact",
+      hi: "परिवार से संपर्क",
     },
-    responseTitle: { en: "What to Expect", hi: "आगे की प्रक्रिया" },
+    responseTitle: { en: "Next Steps", hi: "आगे की प्रक्रिया" },
     callLabel: { en: "Call", hi: "कॉल करें" },
-    whatsappFallback: { en: "Message on WhatsApp", hi: "व्हाट्सएप पर संदेश भेजें" },
+    whatsappFallback: { en: "Message on WhatsApp", hi: "व्हाट्सऐप पर संदेश भेजें" },
     emailFallback: { en: "Send an Email", hi: "ईमेल भेजें" },
     pdfNote: {
-      en: "Download or print a concise, one-page biodata for your reference.",
-      hi: "अपनी सुविधा के लिए एक पृष्ठ का संक्षिप्त बायोडाटा डाउनलोड करें या प्रिंट करें।",
+      en: "Save or print a concise, one-page biodata for easy reference.",
+      hi: "आसानी से देखने के लिए एक पृष्ठ का संक्षिप्त बायोडाटा सेव करें या प्रिंट करें।",
     },
   },
+
   gallery: {
     eyebrow: { en: "Gallery", hi: "तस्वीरें" },
-    title: { en: "Moments from My Life", hi: "मेरी ज़िंदगी के कुछ पल" },
+    title: { en: "A Glimpse of My Life", hi: "मेरी ज़िंदगी की एक झलक" },
     subtitle: {
-      en: "A glimpse of the places, experiences, and everyday moments that make life meaningful.",
-      hi: "उन जगहों, अनुभवों और रोज़मर्रा के पलों की एक झलक जो जीवन को खास बनाते हैं।",
+      en: "A collection of photographs that offer a more personal glimpse beyond the details on this page.",
+      hi: "इस पृष्ठ पर दी गई जानकारी से आगे, मेरे व्यक्तित्व की एक व्यक्तिगत झलक देती कुछ तस्वीरें।",
     },
     note: {
-      en: "Photographs are shared with the consent of everyone shown.",
-      hi: "तस्वीरें उनमें दिखाई देने वाले सभी लोगों की सहमति से साझा की जाती हैं।",
+      en: "Photographs are shared with the permission of the people shown.",
+      hi: "तस्वीरों में दिखाई देने वाले लोगों की अनुमति से ही उन्हें साझा किया जाता है।",
     },
   },
+
   partner: {
     eyebrow: { en: "Life Partner", hi: "जीवनसाथी" },
     title: {
-      en: "The Life I Hope to Build Together",
-      hi: "साथ मिलकर एक खूबसूरत जीवन की शुरुआत",
+      en: "The Partnership I Hope to Build",
+      hi: "एक ऐसे रिश्ते की उम्मीद जो साथ आगे बढ़े",
     },
     subtitle: {
-      en: "I hope to find a kind, loyal, and family-oriented life partner with whom I can build a relationship based on mutual respect, trust, and understanding.",
-      hi: "मैं एक ऐसी जीवनसाथी की तलाश में हूँ जो दयालु, वफ़ादार और परिवार को महत्व देने वाली हो। मैं आपसी सम्मान, विश्वास और समझ पर आधारित रिश्ता बनाना चाहता हूँ।",
+      en: "I hope to meet someone kind, loyal, and family-oriented, with whom I can build a relationship grounded in respect, trust, and understanding.",
+      hi: "मैं ऐसी जीवनसाथी से मिलना चाहता हूँ जो दयालु, वफ़ादार और परिवार को महत्व देने वाली हो, और जिसके साथ सम्मान, विश्वास और समझ पर आधारित रिश्ता बनाया जा सके।",
     },
-    detailsTitle: { en: "What Matters to Me", hi: "मेरे लिए क्या मायने रखता है" },
-    valuesTitle: { en: "Values We Can Share", hi: "हमारे साझा मूल्य" },
-    expectationsTitle: { en: "Our Everyday Life Together", hi: "हमारी साझा रोज़मर्रा की ज़िंदगी" },
+    detailsTitle: { en: "Partner Preferences", hi: "जीवनसाथी से जुड़ी प्राथमिकताएँ" },
+    valuesTitle: { en: "What Matters in a Relationship", hi: "रिश्ते में क्या महत्वपूर्ण है" },
+    expectationsTitle: { en: "A Balanced Life Together", hi: "साथ मिलकर संतुलित जीवन" },
     ageLabel: { en: "Age", hi: "आयु" },
     educationLabel: { en: "Education", hi: "शिक्षा" },
     careerLabel: { en: "Profession", hi: "व्यवसाय" },
     lifestyleLabel: { en: "Lifestyle", hi: "जीवनशैली" },
     locationLabel: { en: "Location", hi: "स्थान" },
   },
+
   career: {
     eyebrow: { en: "Career", hi: "व्यावसायिक जीवन" },
     title: {
@@ -110,11 +115,11 @@ export const sectionCopy = {
       hi: "मेरी व्यावसायिक यात्रा",
     },
     subtitle: {
-      en: "I work in software development, where I enjoy solving problems, building useful solutions, and continuing to learn and grow professionally.",
-      hi: "मैं सॉफ़्टवेयर डेवलपमेंट के क्षेत्र में काम करता हूँ, जहाँ मुझे समस्याओं को सुलझाना, उपयोगी समाधान बनाना और लगातार सीखते हुए आगे बढ़ना पसंद है।",
+      en: "A look at my work in software development and the professional experience I have gained over the years.",
+      hi: "सॉफ़्टवेयर डेवलपमेंट के क्षेत्र में मेरे काम और वर्षों के दौरान प्राप्त पेशेवर अनुभव की एक झलक।",
     },
-    highlightsTitle: { en: "My Work & Skills", hi: "मेरा काम और कौशल" },
-    milestonesTitle: { en: "Career Milestones", hi: "करियर की उपलब्धियाँ" },
+    highlightsTitle: { en: "Work & Expertise", hi: "काम और विशेषज्ञता" },
+    milestonesTitle: { en: "Career Milestones", hi: "करियर के प्रमुख पड़ाव" },
   },
 } as const satisfies Record<string, SectionCopy>;
 
@@ -122,7 +127,7 @@ export const sectionCopy = {
 export const fieldLabels = {
   dateOfBirth: { en: "Date of Birth", hi: "जन्म तिथि" },
   age: { en: "Age", hi: "आयु" },
-  height: { en: "Height", hi: "ऊँचाई" },
+  height: { en: "Height", hi: "कद" },
   motherTongue: { en: "Mother Tongue", hi: "मातृभाषा" },
   currentCity: { en: "Current City", hi: "वर्तमान निवास" },
   hometown: { en: "Hometown", hi: "गृहनगर" },
@@ -130,14 +135,14 @@ export const fieldLabels = {
   religion: { en: "Religion", hi: "धर्म" },
   community: { en: "Community", hi: "समुदाय" },
   maritalStatus: { en: "Marital Status", hi: "वैवाहिक स्थिति" },
-  diet: { en: "Diet", hi: "आहार" },
-  profession: { en: "Profession", hi: "व्यवसाय" },
+  diet: { en: "Diet", hi: "खान-पान की पसंद" },
+  profession: { en: "Profession", hi: "पेशा" },
   currentRole: { en: "Current Role", hi: "वर्तमान पद" },
-  industry: { en: "Industry", hi: "उद्योग" },
+  industry: { en: "Industry", hi: "कार्य क्षेत्र" },
   organisation: { en: "Organisation", hi: "संस्थान" },
   experience: { en: "Work Experience", hi: "कार्य अनुभव" },
   specialization: { en: "Specialization", hi: "विशेषज्ञता" },
-  institution: { en: "Institution", hi: "संस्थान" },
+  institution: { en: "Institution", hi: "शैक्षणिक संस्थान" },
   year: { en: "Year", hi: "वर्ष" },
   compensation: { en: "Compensation", hi: "वेतन" },
   years: { en: "{n} years", hi: "{n} वर्ष" },

@@ -8,7 +8,6 @@ import type { Profile } from "@/types/profile";
  * Everything a visitor reads is configured here — never inside a component.
  *
  * Confirmed profile data:
- * - Personal details, education, career, family and partner preferences.
  * - B.Com completed; MCA currently in progress at Manipal University Jaipur.
  * - Senior Software Engineer at Protean, with 4+ years of experience.
  * - Family details and partner preferences are based on information provided.
@@ -18,11 +17,7 @@ import type { Profile } from "@/types/profile";
  * - Family members' ages and individual sibling details.
  * - Partner values and additional relationship expectations.
  * - Direct phone numbers, WhatsApp numbers and email addresses.
- * - B.Com institution and MCA year/semester, which have not been provided.
- *
- * Photos:
- * - Current images are decorative placeholders, not personal photographs.
- * - Replace them with approved personal photographs when available.
+ * - B.Com institution and other unconfirmed education details.
  *
  * Editing guide:
  * - `en` — English copy, `hi` — Hindi (Devanagari) copy.
@@ -54,8 +49,8 @@ export const profile: Profile = {
       hi: "मेरे बारे में कुछ बातें और साथ मिलकर भविष्य बनाने की उम्मीद",
     },
     intro: {
-      en: "Hello, I am Ranjan Yadav. I work as a Senior Software Engineer and have over four years of professional experience. I am currently pursuing my MCA at Manipal University Jaipur. I live in Noida, and my family is originally from Madhubani, Bihar.",
-      hi: "नमस्कार, मेरा नाम रंजन यादव है। मैं सीनियर सॉफ़्टवेयर इंजीनियर के रूप में कार्यरत हूँ और मुझे चार वर्ष से अधिक का कार्य अनुभव है। वर्तमान में मैं मणिपाल यूनिवर्सिटी, जयपुर से MCA कर रहा हूँ। मैं नोएडा में रहता हूँ और मेरा परिवार मूल रूप से मधुबनी, बिहार से है।",
+      en: "Hello, I’m Ranjan Yadav. I work as a Senior Software Engineer at Protean and have over four years of professional experience. I’m also pursuing my MCA at Manipal University Jaipur. Originally from Madhubani, Bihar, I’m currently based in Noida.",
+      hi: "नमस्कार, मैं रंजन यादव हूँ। मैं Protean में सीनियर सॉफ़्टवेयर इंजीनियर के रूप में कार्यरत हूँ और मुझे चार वर्ष से अधिक का पेशेवर अनुभव है। वर्तमान में मैं मणिपाल यूनिवर्सिटी, जयपुर से MCA भी कर रहा हूँ। मेरा मूल निवास मधुबनी, बिहार है और फिलहाल मैं नोएडा में रहता हूँ।",
     },
     primaryAction: {
       en: "Get to Know Me",
@@ -107,8 +102,8 @@ export const profile: Profile = {
       hi: "मांसाहारी",
     },
     about: {
-      en: "Hello, I am Ranjan Yadav. I work as a Senior Software Engineer and have over four years of professional experience. I completed my B.Com and am currently pursuing my MCA at Manipal University Jaipur. I live in Noida, and my family is originally from Madhubani, Bihar.\n\nI enjoy technology, learning new things, and cooking. I value mutual respect, understanding, and family values. I hope to build a meaningful relationship with a life partner based on trust, companionship, and shared growth.",
-      hi: "नमस्कार, मेरा नाम रंजन यादव है। मैं सीनियर सॉफ़्टवेयर इंजीनियर के रूप में कार्यरत हूँ और मुझे चार वर्ष से अधिक का कार्य अनुभव है। मैंने B.Com की पढ़ाई पूरी की है और वर्तमान में मणिपाल यूनिवर्सिटी, जयपुर से MCA कर रहा हूँ। मैं नोएडा में रहता हूँ और मेरा परिवार मूल रूप से मधुबनी, बिहार से है।\n\nमुझे टेक्नोलॉजी, नई चीज़ें सीखना और खाना बनाना पसंद है। मैं आपसी सम्मान, समझ और पारिवारिक मूल्यों को महत्व देता हूँ। मैं ऐसे जीवनसाथी के साथ विश्वास, साथ और एक-दूसरे की प्रगति पर आधारित सार्थक रिश्ता बनाना चाहता हूँ।",
+      en: "I enjoy learning, exploring new ideas, and growing through new experiences. I have completed my B.Com and am currently pursuing my MCA alongside my professional career. In my free time, I enjoy technology, travelling, long walks, and cooking. I value mutual respect, honesty, and understanding. I hope to build a meaningful relationship with a kind and loyal life partner, sharing life’s experiences and supporting each other’s growth.",
+      hi: "मुझे नई चीज़ें सीखना, नए विचारों को जानना और जीवन के अनुभवों से आगे बढ़ना पसंद है। मैंने B.Com पूरा किया है और वर्तमान में अपने पेशेवर जीवन के साथ MCA की पढ़ाई कर रहा हूँ। खाली समय में मुझे टेक्नोलॉजी, घूमना-फिरना, लंबी सैर करना और खाना बनाना पसंद है। मैं आपसी सम्मान, ईमानदारी और एक-दूसरे को समझने को महत्व देता हूँ। मेरी इच्छा है कि मुझे एक दयालु और वफ़ादार जीवनसाथी मिले, जिसके साथ जीवन के अनुभव साझा करते हुए हम एक-दूसरे की प्रगति में सहयोग करें।",
     },
     values: [
       {
@@ -116,12 +111,12 @@ export const profile: Profile = {
         hi: "आपसी सम्मान",
       },
       {
-        en: "Understanding",
-        hi: "समझ",
+        en: "Honesty",
+        hi: "ईमानदारी",
       },
       {
-        en: "Family values",
-        hi: "पारिवारिक मूल्य",
+        en: "Understanding",
+        hi: "आपसी समझ",
       },
     ],
   },
@@ -142,8 +137,8 @@ export const profile: Profile = {
     organisation: "Protean",
     experienceYears: 4,
     introduction: {
-      en: "I work as a Senior Software Engineer at Protean and have over four years of professional experience in software development. My work involves building and improving software, solving technical problems, and continuing to learn as technology evolves. Alongside my professional work, I am pursuing my MCA at Manipal University Jaipur.",
-      hi: "मैं Protean में वरिष्ठ सॉफ़्टवेयर इंजीनियर के रूप में कार्यरत हूँ और मुझे सॉफ़्टवेयर डेवलपमेंट में चार वर्ष से अधिक का अनुभव है। मेरा काम सॉफ़्टवेयर बनाने और उसे बेहतर बनाने, तकनीकी समस्याओं को सुलझाने तथा नई तकनीकों के साथ सीखते रहने से जुड़ा है। अपने पेशेवर काम के साथ-साथ मैं मणिपाल यूनिवर्सिटी, जयपुर से MCA की पढ़ाई कर रहा हूँ।",
+      en: "My professional journey is in software development, where I enjoy solving problems and building useful digital solutions. I work as a Senior Software Engineer at Protean. Alongside my work, I’m pursuing my MCA to continue strengthening my knowledge and skills.",
+      hi: "मेरा पेशेवर क्षेत्र सॉफ़्टवेयर डेवलपमेंट है, जहाँ मुझे समस्याओं को हल करना और उपयोगी डिजिटल समाधान बनाना पसंद है। मैं Protean में सीनियर सॉफ़्टवेयर इंजीनियर के रूप में कार्यरत हूँ। अपने काम के साथ-साथ MCA की पढ़ाई करके मैं अपने ज्ञान और कौशल को लगातार बेहतर बनाने का प्रयास कर रहा हूँ।",
     },
     // Career highlights, milestones and compensation are intentionally omitted.
   },
@@ -176,8 +171,8 @@ export const profile: Profile = {
 
   family: {
     about: {
-      en: "Our family is based in Madhubani, Bihar. My father is a farmer, and my mother is a homemaker. We value mutual respect, family unity, and understanding.",
-      hi: "हमारा परिवार मधुबनी, बिहार में रहता है। मेरे पिता किसान हैं और मेरी माता गृहिणी हैं। हम आपसी सम्मान, पारिवारिक एकता और समझ को महत्व देते हैं।",
+      en: "My family is originally from Madhubani, Bihar. My father is a farmer, and my mother is a homemaker. We are five siblings in total, including me, and all my siblings are married. I believe honesty, mutual respect, and understanding are important in family relationships.",
+      hi: "मेरा परिवार मूल रूप से मधुबनी, बिहार से है। मेरे पिता किसान हैं और मेरी माता गृहिणी हैं। हम कुल पाँच भाई-बहन हैं, जिनमें मैं भी शामिल हूँ। मेरे सभी भाई-बहन विवाहित हैं। मेरा मानना है कि पारिवारिक रिश्तों में ईमानदारी, आपसी सम्मान और एक-दूसरे को समझना महत्वपूर्ण है।",
     },
     father: {
       relation: {
@@ -207,8 +202,8 @@ export const profile: Profile = {
           hi: "भाई-बहन",
         },
         note: {
-          en: "There are five of us siblings, including me. I have three sisters and one brother, and all my siblings are married.",
-          hi: "हम कुल पाँच भाई-बहन हैं। मेरी तीन बहनें और एक भाई हैं, और मेरे सभी भाई-बहन विवाहित हैं।",
+          en: "We are five siblings, including me. I have three sisters and one brother, and all of them are married.",
+          hi: "हम कुल पाँच भाई-बहन हैं, जिनमें मैं भी शामिल हूँ। मेरी तीन बहनें और एक भाई हैं, और सभी विवाहित हैं।",
         },
       },
     ],
@@ -234,10 +229,10 @@ export const profile: Profile = {
 
   partnerPreferences: {
     about: {
-      en: "I hope to find a kind, loyal, and family-oriented life partner with whom I can build a relationship based on mutual respect and understanding.",
-      hi: "मैं एक ऐसी जीवनसाथी की तलाश में हूँ जो दयालु, वफ़ादार और परिवार को महत्व देने वाली हो। मैं चाहता हूँ कि हमारा रिश्ता आपसी सम्मान और समझ पर आधारित हो।",
+      en: "I hope to meet someone who is kind, loyal, and family-oriented. I value a relationship built on mutual respect, trust, open communication, and understanding. I believe both partners should support each other’s growth while building a balanced life together.",
+      hi: "मैं ऐसी जीवनसाथी से मिलना चाहता हूँ जो दयालु, वफ़ादार और परिवार को महत्व देने वाली हो। मेरे लिए आपसी सम्मान, विश्वास, खुलकर बातचीत करना और एक-दूसरे को समझना महत्वपूर्ण है। मेरा मानना है कि दोनों जीवनसाथियों को एक-दूसरे की प्रगति में सहयोग करते हुए मिलकर संतुलित जीवन बनाना चाहिए।",
     },
-    ageRange: "22 – 27",
+    ageRange: "22 – 28",
     education: {
       en: "Graduate",
       hi: "स्नातक",
@@ -271,33 +266,39 @@ export const profile: Profile = {
         en: "Cooking",
         hi: "खाना बनाना",
       },
+      {
+        en: "Travelling",
+        hi: "घूमना-फिरना",
+      },
+      {
+        en: "Long walks",
+        hi: "लंबी सैर करना",
+      },
     ],
   },
 
   photos: [
-    // Decorative placeholders only — these are not personal photographs.
-    // Replace with approved photographs when available. `photos[0]` is also
-    // used as the hero portrait. Keep dimensions in sync with each image.
+    // Keep image paths and dimensions aligned with the actual files in public/images.
     {
       // `photos[0]` is the portrait shown at the top of the page.
       src: "/images/portrait.png",
       alt: {
         en: "Portrait of Ranjan Yadav",
-        hi: "रंजन यादव का तस्वीर",
+        hi: "रंजन यादव का चित्र",
       },
-      caption: { en: "Recent portrait", hi: "हालिया चित्र" },
+      caption: { en: "Portrait", hi: "चित्र" },
       width: 1200,
       height: 2000,
     },
     {
       src: "/images/gallery-01.jpg",
       alt: {
-        en: "Recent photograph of Ranjan Yadav",
-        hi: "रंजन यादव की हालिया तस्वीर",
+        en: "Photograph of Ranjan Yadav",
+        hi: "रंजन यादव की तस्वीर",
       },
       caption: {
-        en: "A recent photograph",
-        hi: "हालिया तस्वीर",
+        en: "Gallery photograph",
+        hi: "गैलरी की तस्वीर",
       },
       width: 1200,
       height: 1500,
@@ -310,8 +311,8 @@ export const profile: Profile = {
         hi: "गैलरी की तस्वीर",
       },
       caption: {
-        en: "A recent photograph",
-        hi: "हालिया तस्वीर",
+        en: "Gallery photograph",
+        hi: "गैलरी की तस्वीर",
       },
       width: 3464,
       height: 4618,
@@ -323,8 +324,8 @@ export const profile: Profile = {
         hi: "गैलरी की तस्वीर",
       },
       caption: {
-        en: "A recent photograph",
-        hi: "हालिया तस्वीर",
+        en: "Gallery photograph",
+        hi: "गैलरी की तस्वीर",
       },
       width: 1200,
       height: 2000,
@@ -336,8 +337,8 @@ export const profile: Profile = {
         hi: "गैलरी की तस्वीर",
       },
       caption: {
-        en: "A recent photograph",
-        hi: "हालिया तस्वीर",
+        en: "Gallery photograph",
+        hi: "गैलरी की तस्वीर",
       },
       width: 3072,
       height: 4096,
@@ -349,8 +350,8 @@ export const profile: Profile = {
         hi: "गैलरी की तस्वीर",
       },
       caption: {
-        en: "A recent photograph",
-        hi: "हालिया तस्वीर",
+        en: "Gallery photograph",
+        hi: "गैलरी की तस्वीर",
       },
       width: 1200,
       height: 1500,
@@ -362,8 +363,8 @@ export const profile: Profile = {
         hi: "गैलरी की तस्वीर",
       },
       caption: {
-        en: "A recent photograph",
-        hi: "हालिया तस्वीर",
+        en: "Photograph from the gallery",
+        hi: "गैलरी की तस्वीर",
       },
       width: 1200,
       height: 900,
@@ -385,8 +386,8 @@ export const profile: Profile = {
       },
     },
     note: {
-      en: "For any further conversation, please contact my family.",
-      hi: "आगे की बातचीत के लिए कृपया मेरे परिवार से संपर्क करें।",
+      en: "My family will be happy to help with further communication.",
+      hi: "आगे की बातचीत के लिए मेरा परिवार संपर्क में सहयोग करने के लिए उपलब्ध है।",
     },
   },
 

@@ -1,4 +1,3 @@
-
 import type { LocalizedText } from "@/types/profile";
 
 /**
@@ -8,32 +7,74 @@ import type { LocalizedText } from "@/types/profile";
  * missing translation is a type error rather than an English fallback.
  */
 export const uiCopy = {
-  skipToContent: { en: "Skip to main content", hi: "मुख्य सामग्री पर जाएँ" },
-  mainLandmarkLabel: { en: "Main profile content", hi: "मुख्य परिचय सामग्री" },
+  skipToContent: {
+    en: "Skip to main content",
+    hi: "मुख्य सामग्री पर जाएँ",
+  },
+  mainLandmarkLabel: {
+    en: "Main profile content",
+    hi: "परिचय की मुख्य सामग्री",
+  },
 
-  primaryNavLabel: { en: "Main navigation", hi: "मुख्य नेविगेशन" },
-  mobileNavLabel: { en: "Mobile navigation", hi: "मोबाइल नेविगेशन" },
-  openMenu: { en: "Open navigation menu", hi: "नेविगेशन मेन्यू खोलें" },
-  closeMenu: { en: "Close navigation menu", hi: "नेविगेशन मेन्यू बंद करें" },
+  primaryNavLabel: {
+    en: "Main navigation",
+    hi: "मुख्य नेविगेशन",
+  },
+  mobileNavLabel: {
+    en: "Mobile navigation",
+    hi: "मोबाइल नेविगेशन",
+  },
+  openMenu: {
+    en: "Open navigation menu",
+    hi: "नेविगेशन मेन्यू खोलें",
+  },
+  closeMenu: {
+    en: "Close navigation menu",
+    hi: "नेविगेशन मेन्यू बंद करें",
+  },
 
   languageSwitcherLabel: {
     en: "Choose your language",
-    hi: "अपनी भाषा चुनें",
+    hi: "अपनी पसंद की भाषा चुनें",
   },
-  currentLanguage: { en: "Current language", hi: "वर्तमान भाषा" },
+  currentLanguage: {
+    en: "Current language",
+    hi: "वर्तमान भाषा",
+  },
 
-  profileTagline: { en: "Matrimonial Profile", hi: "वैवाहिक परिचय" },
+  profileTagline: {
+    en: "Matrimonial Profile",
+    hi: "वैवाहिक परिचय",
+  },
   footerDisclaimer: {
     en: "Shared with prospective families for matrimonial purposes",
     hi: "विवाह संबंधी बातचीत के लिए इच्छुक परिवारों के साथ साझा किया गया",
   },
 
-  openImage: { en: "View image", hi: "तस्वीर देखें" },
-  openImageViewer: { en: "Open image viewer", hi: "तस्वीर देखने के लिए खोलें" },
-  closeImageViewer: { en: "Close image viewer", hi: "तस्वीर देखने वाला व्यू बंद करें" },
-  previousImage: { en: "Previous image", hi: "पिछली तस्वीर" },
-  nextImage: { en: "Next image", hi: "अगली तस्वीर" },
-  imagePosition: { en: "Image", hi: "तस्वीर" },
+  openImage: {
+    en: "View image",
+    hi: "तस्वीर देखें",
+  },
+  openImageViewer: {
+    en: "Open image viewer",
+    hi: "तस्वीर देखने के लिए खोलें",
+  },
+  closeImageViewer: {
+    en: "Close image viewer",
+    hi: "तस्वीर देखने वाला व्यू बंद करें",
+  },
+  previousImage: {
+    en: "Previous image",
+    hi: "पिछली तस्वीर",
+  },
+  nextImage: {
+    en: "Next image",
+    hi: "अगली तस्वीर",
+  },
+  imagePosition: {
+    en: "Image",
+    hi: "तस्वीर",
+  },
 } as const satisfies Record<string, LocalizedText>;
 
 export type UiCopyKey = keyof typeof uiCopy;
