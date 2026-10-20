@@ -1,11 +1,13 @@
-import { ArrowDown, Images } from "lucide-react";
+import { ArrowDown, Download, Images } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
 import { DecorativeDivider } from "@/components/ui/DecorativeDivider";
 import { OutlineButton } from "@/components/ui/OutlineButton";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 import { profile } from "@/data/profile";
+import { uiCopy } from "@/data/uiCopy";
 import { resolveText } from "@/lib/i18n";
 import type { Locale } from "@/types/profile";
 
@@ -85,6 +87,14 @@ export function HeroSection({ locale }: { locale: Locale }) {
                 <Images className="size-4" strokeWidth={1.75} />
                 {resolveText(profile.hero.secondaryAction, locale)}
               </OutlineButton>
+              <Link
+                href={`/${locale}/biodata`}
+                title={resolveText(uiCopy.downloadBiodata, locale)}
+                aria-label={resolveText(uiCopy.downloadBiodata, locale)}
+                className="inline-flex items-center justify-center rounded-pill border border-gold self-stretch px-4 text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface"
+              >
+                <Download className="size-5 shrink-0" strokeWidth={2.5} aria-hidden="true" />
+              </Link>
             </div>
           </div>
 

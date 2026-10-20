@@ -195,3 +195,95 @@
   text-transform: uppercase;
   color: var(--color-gold-soft);
 }
+
+/* ==========================================================================
+   Print — the biodata page is designed to save cleanly as a one-page PDF
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  /* Hide site chrome and screen-only controls on the printable sheet. */
+  .site-header,
+  .site-footer,
+  .biodata-toolbar {
+    display: none !important;
+  }
+
+  .biodata-document {
+    padding: 0 !important;
+  }
+
+  /* Keep the sheet borderless and full-bleed on paper. */
+  .biodata-document .frame-double {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Each sheet is exactly one printed page. */
+  .biodata-sheet {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .biodata-sheet:last-of-type {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  /* Slightly tighter type so each sheet comfortably fits an A4 page. */
+  .biodata-document {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .biodata-document h1 {
+    font-size: 1.75rem;
+  }
+
+  .biodata-document h2 {
+    font-size: 1.1rem;
+  }
+
+  /* The accent panel's negative margins can overflow the page in print. */
+  .biodata-document .-mx-2 {
+    margin-inline: 0 !important;
+  }
+
+  /* Trim vertical rhythm so each sheet fits an A4 page. */
+  .biodata-document section {
+    margin-top: 0 !important;
+  }
+
+  .biodata-document .mt-6,
+  .biodata-document .mt-8 {
+    margin-top: 0.75rem !important;
+  }
+
+  .biodata-document .gap-y-6,
+  .biodata-document .gap-y-8 {
+    row-gap: 0.75rem !important;
+  }
+
+  .biodata-document .py-4 {
+    padding-block: 0.5rem !important;
+  }
+
+  /* Never break a section across pages. */
+  .biodata-document section,
+  .biodata-document dl {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+}

@@ -1,3 +1,6 @@
+import { Download } from "lucide-react";
+import Link from "next/link";
+
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { Container } from "@/components/ui/Container";
@@ -16,7 +19,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   const initial = resolveText(profile.personal.shortName, locale).slice(0, 1);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gold/30 bg-ivory/85 backdrop-blur-md">
+    <header className="site-header sticky top-0 z-50 border-b border-gold/30 bg-ivory/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
         <a
           href="#top"
@@ -53,6 +56,14 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="flex items-center gap-3">
+          <Link
+            href={`/${locale}/biodata`}
+            title={resolveText(uiCopy.downloadBiodata, locale)}
+            aria-label={resolveText(uiCopy.downloadBiodata, locale)}
+            className="hidden size-10 items-center justify-center rounded-pill border border-gold bg-transparent text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface sm:inline-flex"
+          >
+            <Download className="size-5 shrink-0" strokeWidth={2.5} aria-hidden="true" />
+          </Link>
           <div className="hidden md:block">
             <LanguageSwitcher locale={locale} />
           </div>
@@ -65,7 +76,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   return (
-    <footer className="border-t border-gold/30 bg-ivory-deep py-10">
+    <footer className="site-footer border-t border-gold/30 bg-ivory-deep py-10">
       <Container>
         <div className="flex flex-col items-center gap-4">
           <DecorativeDivider tone="muted" className="w-full" />

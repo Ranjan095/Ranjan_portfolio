@@ -379,6 +379,7 @@ export const profile: Profile = {
         en: "Contact through family",
         hi: "परिवार के माध्यम से संपर्क करें",
       },
+      phones: ["8092003649", "9108909245"],
       showOnPage: true,
       note: {
         en: "For further discussions, please connect with my family through the person who shared this profile.",

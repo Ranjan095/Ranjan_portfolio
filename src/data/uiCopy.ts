@@ -83,6 +83,66 @@ export const uiCopy = {
     en: "Download image",
     hi: "तस्वीर डाउनलोड करें",
   },
+  downloadBiodata: {
+    en: "Download Biodata",
+    hi: "बायोडाटा डाउनलोड करें",
+  },
+  printBiodata: {
+    en: "Save as PDF",
+    hi: "PDF के रूप में सहेजें",
+  },
+  biodataTitle: {
+    en: "Marriage Biodata",
+    hi: "विवाह बायोडाटा",
+  },
+  biodataInvocation: {
+    en: "ॐ गणेशाय नमः",
+    hi: "ॐ गणेशाय नमः",
+  },
+  biodataSubtitle: {
+    en: "A summary for prospective families",
+    hi: "इच्छुक परिवारों के लिए एक संक्षिप्त परिचय",
+  },
+  backToProfile: {
+    en: "Back to Profile",
+    hi: "परिचय पर लौटें",
+  },
+  printHint: {
+    en: "Tip: in the print dialog, choose “Save as PDF” as the destination.",
+    hi: "सुझाव: प्रिंट विंडो में गंतव्य के रूप में “Save as PDF” चुनें।",
+  },
+  biodataPersonal: {
+    en: "Personal Details",
+    hi: "व्यक्तिगत विवरण",
+  },
+  biodataAbout: {
+    en: "About",
+    hi: "परिचय",
+  },
+  biodataEducation: {
+    en: "Education",
+    hi: "शिक्षा",
+  },
+  biodataCareer: {
+    en: "Career",
+    hi: "व्यावसायिक जीवन",
+  },
+  biodataFamily: {
+    en: "Family",
+    hi: "परिवार",
+  },
+  biodataPartner: {
+    en: "Life Partner",
+    hi: "जीवनसाथी",
+  },
+  biodataContact: {
+    en: "Contact",
+    hi: "संपर्क",
+  },
+  contactMobile: {
+    en: "Mobile",
+    hi: "मोबाइल",
+  },
 } as const satisfies Record<string, LocalizedText>;
 
 export type UiCopyKey = keyof typeof uiCopy;

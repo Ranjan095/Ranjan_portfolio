@@ -146,6 +146,8 @@ export interface FamilyContact {
   readonly relation: LocalizedText;
   readonly name?: LocalizedText;
   readonly phone?: string;
+  /** Additional numbers, in the order they should appear. */
+  readonly phones?: readonly string[];
   readonly email?: string;
   readonly showOnPage: boolean;
   readonly note?: LocalizedText;

@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
@@ -81,6 +82,17 @@ export function MobileNav({ items, locale, onNavigate }: MobileNavProps) {
                 ))}
               </ul>
             </nav>
+            <div className="border-t border-gold/20 py-4">
+              <Link
+                href={`/${locale}/biodata`}
+                onClick={() => setIsOpen(false)}
+                title={resolveText(uiCopy.downloadBiodata, locale)}
+                aria-label={resolveText(uiCopy.downloadBiodata, locale)}
+                className="mx-auto flex size-11 items-center justify-center rounded-pill border border-gold text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy hover:text-surface"
+              >
+                <Download className="size-5 shrink-0" strokeWidth={2.5} aria-hidden="true" />
+              </Link>
+            </div>
             <div className="flex justify-center border-t border-gold/20 py-4">
               <LanguageSwitcher locale={locale} />
             </div>
