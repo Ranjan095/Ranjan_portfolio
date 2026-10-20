@@ -14,9 +14,13 @@ const PORT = process.env.BIODATA_PDF_PORT ?? "3258";
 const BASE_URL = process.env.BIODATA_PDF_BASE_URL ?? `http://127.0.0.1:${PORT}`;
 const LOCALES = ["en", "hi"];
 
-/** Resolve a Chrome/Chromium executable from env or the puppeteer cache. */
+/** Resolve a Chrome/Chromium executable from env or the puppeteer cache.
+ *  Returns `null` when none is available (e.g. on a host like Vercel), so the
+ *  build can fall back to the PDFs already committed in `public/biodata/`. */
 async function resolveChrome() {
-  if (process.env.CHROME_PATH) return process.env.CHROME_PATH;
+  if (process.env.CHROME_PATH) {
+    return existsSync(process.env.CHROME_PATH) ? process.env.CHROME_PATH : null;
+  }
 
   const cacheRoot = join(process.env.HOME ?? "", ".cache", "puppeteer");
   const candidates = [
@@ -37,9 +41,7 @@ async function resolveChrome() {
     }
   }
 
-  throw new Error(
-    "No Chrome executable found. Set CHROME_PATH or run `npx puppeteer browsers install chrome-headless-shell`.",
-  );
+  return null;
 }
 
 async function waitForServer(url, timeoutMs = 30000) {
@@ -64,8 +66,20 @@ function countPdfPages(buffer) {
 }
 
 async function main() {
+  if (process.env.BIODATA_PDF_SKIP === "1") {
+    console.log("  • BIODATA_PDF_SKIP=1 — keeping committed PDFs.");
+    return;
+  }
+
   const skipServer = process.env.BIODATA_PDF_SKIP_SERVER === "1";
   const executablePath = await resolveChrome();
+
+  if (!executablePath) {
+    console.warn(
+      "  ! No Chrome executable found — skipping PDF generation and using the PDFs committed in public/biodata/.",
+    );
+    return;
+  }
 
   mkdirSync(outDir, { recursive: true });
 
