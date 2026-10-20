@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens — Tailwind CSS v4 (@theme)
+   Matrimonial palette: warm ivory, royal burgundy, antique gold, dark ink.
+   ========================================================================== */
+@theme {
+  /* Surfaces */
+  --color-ivory: #f8f2e8;
+  --color-ivory-deep: #f1e7d7;
+  --color-surface: #ffffff;
+
+  /* Royal burgundy */
+  --color-burgundy: #6b1f32;
+  --color-burgundy-deep: #4e1624;
+  --color-burgundy-soft: #8c3548;
+
+  /* Antique gold */
+  --color-gold: #d4b16a;
+  --color-gold-soft: #e8d3a3;
+  --color-gold-deep: #7d6526;
+
+  /* Text */
+  --color-ink: #352b28;
+  --color-ink-soft: #4b3f3a;
+  --color-muted: #6f655f;
+
+  /* Typography — serif display, humanist sans body, Devanagari fallbacks */
+  --font-display: var(--font-cormorant), var(--font-noto-serif-devanagari),
+    "Iowan Old Style", Georgia, serif;
+  --font-body: var(--font-inter), var(--font-noto-sans-devanagari), system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+
+  /* Elevation — soft, warm shadows */
+  --shadow-soft: 0 1px 2px rgb(53 43 40 / 0.04),
+    0 8px 24px -12px rgb(53 43 40 / 0.18);
+  --shadow-card: 0 1px 2px rgb(53 43 40 / 0.05),
+    0 18px 40px -24px rgb(107 31 50 / 0.28);
+  --shadow-elevated: 0 2px 4px rgb(53 43 40 / 0.06),
+    0 28px 60px -30px rgb(107 31 50 / 0.35);
+
+  /* Shape */
+  --radius-card: 0.5rem;
+  --radius-pill: 999px;
+
+  /* Rhythm */
+  --spacing-section: 5.5rem;
+
+  /* Motion — CSS only, neutralised by the reduced-motion guard below */
+  --animate-fade-in: fade-in 900ms ease-out both;
+  --animate-fade-up: fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-reveal-portrait: reveal-portrait 1200ms cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-portrait {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Base layer
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Anchored sections clear the sticky header. */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-burgundy);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-soft);
+    color: var(--color-burgundy-deep);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-deep);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Custom utilities — Indian-craft inspired ornamentation
+   ========================================================================== */
+
+/* 1px gold rule with a soft fade at both ends. */
+@utility gold-rule {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold) 20%,
+    var(--color-gold) 80%,
+    transparent
+  );
+}
+
+/* Double gold frame, reminiscent of a hand-painted pashkarlik border. */
+@utility frame-double {
+  border: 1px solid color-mix(in oklab, var(--color-gold) 45%, transparent);
+  box-shadow:
+    inset 0 0 0 3px var(--color-ivory),
+    inset 0 0 0 4px color-mix(in oklab, var(--color-gold) 28%, transparent);
+}
+
+/* Fine paper grain for large sections. */
+@utility paper-grain {
+  background-image:
+    radial-gradient(
+      circle at 15% 12%,
+      color-mix(in oklab, var(--color-gold) 10%, transparent) 0,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 78%,
+      color-mix(in oklab, var(--color-burgundy) 8%, transparent) 0,
+      transparent 50%
+    );
+}
+
+/* Small-caps label used for section eyebrows on light surfaces. */
+@utility eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+}
+
+/* Eyebrow variant for burgundy / dark surfaces. */
+@utility eyebrow-light {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-soft);
+}
